@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Codificador e Decodificador de Texto">
+
+        <link rel="stylesheet" href="css/style.css">
+        <title>Codificador de texto</title>
+       
+    </head>
+
+    <body>
+        <header>
+            <h1>
+                <a href="index.html" title="Home">
+                    <img src="img/image.png" alt="Logo Alura."
+                    width="100" height="48" id="logo">
+                </a>
+            </h1>     
+        </header>
+        <main class="main">
+            <section>
+                <textarea class="input-texto" cols="40" rows="9" placeholder="Digite seu texto..."></textarea>
+
+                <div class="informacao">
+                    <ul class="mensagem-erro"></ul>
+                </div>
+
+                <div class="botoes">
+                    <button type="button" class="btn-codificar">Criptografar</button>
+                    <button type="button" class="btn-decodificar">Descriptografar</button>
+                </div>
+            </section>
+
+            <section class="container">
+                <textarea class="resultado" cols="20" rows="11" placeholder=" " readonly></textarea>
+                <button type="button" class="btn-copiar">Copiar</button>
+            </section>
+        </main>
+
+        <footer>
+                       
+            <div class="credito">
+                <p>&#169; Desenvolvido por Gabriely Freitas - 2024</p>
+            </div>
+        </footer>
+
+        <script src="js/criptografia.js"></script>
+        <script src="js/validar.js"></script>
+        <script src="js/copiar.js"></script>
+    </body>
+</html>
