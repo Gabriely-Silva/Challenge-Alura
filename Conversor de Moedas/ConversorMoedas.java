@@ -13,7 +13,7 @@ public class ConversorMoedas {
 
     // Método para realizar a requisição à API e retornar a taxa de câmbio
     public static double obterTaxaCambio(String de, String para) throws Exception {
-        String chave = "db2e38f1cd82d1b2b7b713e4"; // Sua chave de API
+        String chave = "chave"; // Sua chave de API
         String endereco = "https://v6.exchangerate-api.com/v6/" + chave + "/latest/USD"; // Requisição única com base no USD
 
         HttpClient client = HttpClient.newHttpClient();
