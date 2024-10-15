@@ -12,9 +12,9 @@ import java.util.Scanner;
 public class ConversorMoedas {
 
     // Método para realizar a requisição à API e retornar a taxa de câmbio
-    public static double obterTaxaCambio(String de, String para) throws Exception {
+    public static double obterTaxaCambio(String de, String para, double valor) throws Exception {
         String chave = "chave"; // Sua chave de API
-        String endereco = "https://v6.exchangerate-api.com/v6/" + chave + "/latest/USD"; // Requisição única com base no USD
+        String endereco = "https://v6.exchangerate-api.com/v6/" + chave + "/latest/" + de; // Requisição única com base no USD
 
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
@@ -30,10 +30,9 @@ public class ConversorMoedas {
 
         // Obter a taxa de câmbio de 'de' e 'para' em relação ao USD
         double taxaPara = moedas.get(para).getAsDouble(); // Ex: USD para BRL
-        double taxaDe = moedas.get(de).getAsDouble();   // Ex: USD para EUR
 
         // A taxa de conversão direta de 'de' para 'para' é:
-        double taxaCambio = taxaPara * taxaDe;
+        double taxaCambio = taxaPara * valor;
 
         return taxaCambio; // Retorna a taxa de conversão
     }
@@ -103,7 +102,7 @@ public class ConversorMoedas {
 
             try {
                 // Obter a taxa de câmbio da API
-                double taxa = obterTaxaCambio(de, para);
+                double taxa = obterTaxaCambio(de, para, valor);
                 double valorConvertido = valor * taxa;
                 System.out.printf("Valor convertido: %.2f %s\n", valorConvertido, para);
             } catch (Exception e) {
@@ -114,3 +113,4 @@ public class ConversorMoedas {
         scanner.close();
     }
 }
+
